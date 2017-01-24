@@ -5,6 +5,8 @@ import starling.core.Starling;
 import starling.display.Sprite;
 import starling.display.Stage;
 
+[SWF (frameRate = "60" ,  width="1024", height="768")]
+
 
 public class Main extends flash.display.Sprite
 {

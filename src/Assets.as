@@ -8,6 +8,8 @@ public class Assets extends Sprite
 {
 
     public static var loadList:List;
+    public static var loadLevelsList:LevelsList;
+    public static var loadScreenLevel:ScreenLevel;
     public static var assets:AssetManager = new AssetManager ();
     private var _appDir:File = File.applicationDirectory;
 
@@ -32,9 +34,13 @@ public class Assets extends Sprite
 
     private function loadAssets():void
     {
-        loadList = new List();
-        addChild(loadList);
+        //loadList = new List();
+        //addChild(loadList);
+        //loadLevelsList = new LevelsList();
+        //this.addChild(loadLevelsList);
 
+        loadScreenLevel = new ScreenLevel();
+        this.addChild(loadScreenLevel);
     }
 
 
