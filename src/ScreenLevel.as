@@ -61,7 +61,7 @@ public class ScreenLevel extends Screen
         trace("*************** Hello this is the Levels Screen ***************");
         background = new Image(Assets.assets.getTexture("backgroundJungle"));
         addChild(background);
-        //new MetalWorksMobileTheme();
+        new MetalWorksMobileTheme();
         panel = new Panel();
         //panel.headerFactory = headerFunction; //adds the close button but I don't think I need this. Add Starling button instead.
         panel.backgroundSkin = new Image(Assets.assets.getTexture("bluebg"));
@@ -86,13 +86,14 @@ public class ScreenLevel extends Screen
         ]);
         panel.addChild(tabBar);
 
+
         //Skins the first tab
-        tabBar.firstTabFactory = function():ToggleButton
+        /*tabBar.firstTabFactory = function():ToggleButton
         {
             var tab:ToggleButton = new ToggleButton();
 
             //skin the tab here, if not using a theme
-            var skin:ImageSkin = new ImageSkin(Assets.assets.getTexture("yellowtab") );
+            var skin:ImageSkin = new ImageSkin(Assets.assets.getTexture("redTab") );
             skin.scale9Grid = new Rectangle( 2, 3, 1, 6 );
             tab.defaultSkin = skin;
             //tab.fontStyles = new TextFormat( "Helvetica", 20, 0x3c3c3c );
@@ -106,56 +107,33 @@ public class ScreenLevel extends Screen
             var tab:ToggleButton = new ToggleButton();
 
             //skin the tab here, if not using a theme
-            var  skin:ImageSkin = new ImageSkin(Assets.assets.getTexture("whitetab") );
+            var  skin:ImageSkin = new ImageSkin(Assets.assets.getTexture("greenTab") );
             skin.scale9Grid = new Rectangle( 2, 3, 1, 6 );
             tab.defaultSkin = skin;
             //tab.fontStyles = new TextFormat( "Helvetica", 20, 0x3c3c3c );
 
             return tab;
-        };
-
-
+        };*/
 
         list = new feathers.controls.List();
-        list.layoutData = new VerticalLayoutData(100,100);
-        list.verticalScrollPosition = ScrollPolicy.OFF;
-        list.horizontalScrollPolicy = ScrollPolicy.ON;
-        list.itemRendererFactory = rendererFunction;
-        panel.addChild(list);
-
-       /* list = new feathers.controls.List();
         list.layoutData = new VerticalLayoutData(100, 100);
-        list.backgroundSkin = new Image( Assets.assets.getTexture("red_square") );// new Quad( 8, 8, 0xffffff );
-        list.verticalScrollPolicy = ScrollPolicy.OFF;
-        list.horizontalScrollPolicy = ScrollPolicy.OFF;
-        list.itemRendererFactory = rendererFunction;
-        panel.addChild( list );*/
+        //list.itemRendererFactory = rendererFunction;
+        //list.backgroundDisabledSkin = new Image();
+
+        //list.verticalScrollPolicy = ScrollPolicy.OFF;
+        //list.horizontalScrollPolicy = ScrollPolicy.OFF;
+
+        panel.addChild( list );
 
         closeButton = new starling.display.Button(Assets.assets.getTexture("close"));
-        this.addChild(closeButton);
         closeButton.x = panel.width;
         closeButton.y = panel.y;
+        this.addChild(closeButton);
+
     }
 
     //Adds items to the list;
-    private function rendererFunction():IListItemRenderer
-    {
-        var renderer:DefaultListItemRenderer = new DefaultListItemRenderer();
 
-        //renderer.styleProvider = null;
-        renderer.upIcon = new Image( Assets.assets.getTexture("locked") );
-        renderer.iconPosition = RelativePosition.BOTTOM;
-        renderer.horizontalAlign = HorizontalAlign.CENTER;
-        renderer.verticalAlign = VerticalAlign.MIDDLE;
-        renderer.labelFactory = labelFunction;
-        //renderer.defaultLabelProperties.elementFormat = new TextFormat( BaseMetalWorksMobileTheme.FONT_NAME, 38, 0xffffff);
-        (renderer.upIcon as Image).width = 32;
-        (renderer.upIcon as Image).height = 32;
-        renderer.defaultSkin = new Image( Assets.assets.getTexture("greenbg") );
-        (renderer.defaultSkin as Image).scale9Grid = new Rectangle(11,11,11,11);
-
-        return renderer;
-    }
 
     //Adds the Close button throug the header - Function for the header on the panel and the close button
     //Do I need this. Just add a Starling button.

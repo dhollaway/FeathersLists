@@ -81,6 +81,7 @@ public class LevelsList extends Screen
 		list.dataProvider = new ListCollection(data);
 
         var listLayout:TiledRowsLayout = new TiledRowsLayout();
+
 		(listLayout as TiledRowsLayout).tileHorizontalAlign = HorizontalAlign.JUSTIFY;
 		(listLayout as TiledRowsLayout).tileVerticalAlign = VerticalAlign.JUSTIFY;
 		(listLayout as TiledRowsLayout).requestedColumnCount = 5;

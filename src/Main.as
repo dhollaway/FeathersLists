@@ -15,7 +15,7 @@ public class Main extends flash.display.Sprite
 
     public function Main()
     {
-        _starling = new Starling(Assets, stage);
+        _starling = new Starling(Video, stage);
         _starling.start();
 
     }
